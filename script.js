@@ -1,7 +1,20 @@
 const container=document.querySelector('.container');
 
-for (let i=0;i<16*16;i++){
-    const div=document.createElement('div');
-    div.classList.add('grid-item');
-    container.appendChild(div);
+function displayGrid(){
+    let theInput=document.querySelector('.theinput')
+    let size=Number(theInput.value);
+    
+    for (let i=0;i<size;i++){
+        let div=document.createElement('div');
+        div.classList.add('grid-item');
+        div.addEventListener('mouseover',()=>{
+            div.style.backgroundColor="blue";
+        })
+        container.appendChild(div);
+    
+        
+    }
+    theInput.value='';
 }
+
+
