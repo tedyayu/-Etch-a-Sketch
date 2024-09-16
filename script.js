@@ -17,8 +17,14 @@ function displayGrid(){
         for (let i=0;i<size*size;i++){
             let div=document.createElement('div');
             div.classList.add('grid-item');
+            div.dataset.interactions=0;
             div.addEventListener('mouseover',()=>{
                 div.style.backgroundColor=`rgb(${red},${green},${blue})`;
+                const interactions=parseInt(div.dataset.interactions);
+                div.dataset.interactions=interactions+1;
+
+                const opacity=1-(interactions/10);
+                div.style.opacity=opacity;
             })
             container.appendChild(div);
         
