@@ -4,9 +4,7 @@ function displayGrid(){
     let theInput=document.querySelector('.theinput')
     let size=Number(theInput.value);
 
-    let red=(Math.random())*100;
-    let green=(Math.random())*100;
-    let blue=(Math.random())*100;
+    
     if(size>100){
         let tehAnswer=document.querySelector('.answer');
         let newAnswer=document.createElement('p');
@@ -15,6 +13,9 @@ function displayGrid(){
     }
     else{
         for (let i=0;i<size*size;i++){
+            let red=(Math.random())*100;
+            let green=(Math.random())*100;
+            let blue=(Math.random())*100;
             let div=document.createElement('div');
             div.classList.add('grid-item');
             div.dataset.interactions=0;
